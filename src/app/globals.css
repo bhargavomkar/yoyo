@@ -1,26 +1,59 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #F5F4F5;
+    --foreground: #141618;
+    --sidebar-bg: #FFFFFF;
+    --card: #FFFFFF;
+    --card-foreground: #141618;
+    --popover: #FFFFFF;
+    --popover-foreground: #141618;
+    --border: #EDEDEB;
+    --border-subtle: #F0EFEF;
+    --input: #EDEDEB;
+    
+    /* Faro Brand Colors */
+    --faro-bg: #F5F4F5;
+    --faro-sage: #87BAA4;
+    --faro-sage-light: #BAD6CC;
+    --faro-sage-dark: #2F4D41;
+    --faro-slate: #9AA19E;
+    --faro-slate-dark: #5A605D;
+    --faro-stone: #EDEDEB;
+    
+    --radius: 6px;
   }
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom crisp institutional scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #EDEDEB;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9AA19E;
+}
+
+/* Tabular figures for financial numbers */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
 }
